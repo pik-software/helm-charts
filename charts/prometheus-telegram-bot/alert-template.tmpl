@@ -13,7 +13,7 @@ Status: <b>{{ .Status | str_UpperCase }} 🔥</b>
 Status: <b>{{ .Status | str_UpperCase }} ✅</b>
 {{ end -}}
 
-<b>Active Alert List:</b>
+<b>Active Alerts List:</b>
 {{- range $val := .Alerts }}
 <b>---</b>
   {{ $severity := index $val.Labels "severity" -}}
