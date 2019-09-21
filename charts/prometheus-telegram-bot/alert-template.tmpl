@@ -28,9 +28,9 @@ Status: <b>{{ .Status | str_UpperCase }} ✅</b>
   {{ end -}}
 
   {{ $severity := index $val.Labels "severity" -}}
-  {{ if eq $severity "Warning" -}}
+  {{ if eq $severity "warning" -}}
   <b>Severity:</b> Warning ⚠️
-  {{ else if eq $severity "Critical" -}}
+  {{ else if eq $severity "critical" -}}
   <b>Severity:</b> Critical 🚨
   {{ else -}}
   <b>Severity:</b> {{ $severity }}
