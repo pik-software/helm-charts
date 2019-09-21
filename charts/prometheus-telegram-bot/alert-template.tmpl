@@ -21,8 +21,6 @@ Status: <b>{{ .Status | str_UpperCase }} ✅</b>
   {{ end -}}
   {{ if HasKey $val.Annotations "value" -}} 
   <b>Current value:</b> {{ index $val.Annotations "value" | str_FormatFloat}}
-  {{ else if HasKey $val.Annotations "measureUnit" -}}
-  <b>Current value:</b> {{ str_Format_MeasureUnit (index $val.Annotations "measureUnit") (index $val.Annotations "value")}}  
   {{ end -}}
 
   {{ $severity := index $val.Labels "severity" -}}
@@ -33,11 +31,10 @@ Status: <b>{{ .Status | str_UpperCase }} ✅</b>
   {{ else -}}
   <b>Severity:</b> {{ $severity }}
   {{ end -}}
-  
-  <b>Active from:</b> {{ $val.StartsAt | str_FormatDate }}
   {{ range $key, $value := $val.Annotations -}}
   {{ if and (and (ne $key "name") (ne $key "value")) (ne $key "measureUnit") }}
   <b>{{ $key }}:</b> {{ $value }}
   {{- end -}}
+  <b>Active from:</b> {{ $val.StartsAt | str_FormatDate }}
 {{- end -}}
 {{- end -}}
