@@ -15,16 +15,6 @@ Status: <b>{{ .Status | str_UpperCase }} ✅</b>
 
 <b>Active Alert List:</b>
 {{- range $val := .Alerts }}
-  {{ if HasKey $val.Annotations "value" -}} 
-  <b>Current value:</b> {{ index $val.Annotations "value" }}
-  {{ end -}}
-  {{ if HasKey $val.Annotations "namespace" -}} 
-  <b>Namespace:</b> {{ index $val.Annotations "namespace" }}
-  {{ end -}}
-  {{ if HasKey $val.Annotations "ingress" -}} 
-  <b>Ingress:</b> {{ index $val.Annotations "ingress" }}
-  {{ end -}}
-
   {{ $severity := index $val.Labels "severity" -}}
   {{ if eq $severity "warning" -}}
   <b>Severity:</b> Warning ⚠️
@@ -35,9 +25,10 @@ Status: <b>{{ .Status | str_UpperCase }} ✅</b>
   {{ end -}}
 
   {{ range $key, $value := $val.Annotations -}}
-  {{ if and (and (ne $key "name") (ne $key "value")) (ne $key "measureUnit") }}
   <b>{{ $key }}:</b> {{ $value }}
-  {{- end -}}
+  {{ end -}}
   <b>Active from:</b> {{ $val.StartsAt | str_FormatDate }}
+
+  <b>----------------------<b>
 {{- end -}}
 {{- end -}}
