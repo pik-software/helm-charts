@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" $ }}
+  labels:
+  {{- range $key, $value := .Values.labels }}
+    {{ $key }}: {{ $value }}
+  {{- end }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+    {{- range $key, $value := .Values.labels }}
+      {{ $key }}: {{ $value }}
+    {{- end }}
+  template:
+    metadata:
+      labels:
+      {{- range $key, $value := .Values.labels }}
+        {{ $key }}: {{ $value }}
+      {{- end }}
+    spec:
+      containers:
+      - name: prometheus-telegram-bot
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 9087
+        volumeMounts:
+        - name: config-volume
+          mountPath: /config.yaml
+          subPath: config.yaml
+        - name: template-volume
+          mountPath: /template.tmpl
+          subPath: template.tmpl
+      volumes:
+        - name: config-volume
+          configMap:
+            name: {{ template "fullname" $ }}-config
+        - name: template-volume
+          configMap:
+            name: {{ template "fullname" $ }}-template

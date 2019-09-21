@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+  {{- range $key, $value := .Values.labels }}
+    {{ $key }}: {{ $value }}
+  {{- end }}
+  name: {{ template "fullname" $ }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+    {{- range $key, $value := .Values.labels }}
+      {{ $key }}: {{ $value }}
+    {{- end }}
+  template:
+    metadata:
+      labels:
+      {{- range $key, $value := .Values.labels }}
+        {{ $key }}: {{ $value }}
+      {{- end }}
+    spec:
+      volumes:
+        - name: nginx
+          configMap:
+            name: {{ template "fullname" $ }}-nginx
+      containers:
+        - name: nginx
+          image: {{ .Values.nginx.image.repository }}:{{ .Values.nginx.image.tag }}
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 0.2
+              memory: 512Mi
+          ports:
+            - name: nginx
+              containerPort: 80
+          volumeMounts:
+            - name: nginx
+              mountPath: /etc/nginx/
+              readOnly: true
+          livenessProbe:
+            httpGet:
+              path: /healthcheck
+              port: 80
+            initialDelaySeconds: 3
+            timeoutSeconds: 2
+            failureThreshold: 2
+        - name: oauth2-proxy
+          image: {{ .Values.proxy.image.repository }}:{{ .Values.proxy.image.tag }}
+          args:
+          - --provider={{ .Values.proxy.provider}}
+          - --email-domain=*
+          - --http-address=0.0.0.0:4180
+          - --redirect-url=https://oauth2.{{ .Values.domain.zone }}/oauth2/callback
+          - --upstream=http://localhost/redirect/
+          - --cookie-domain=.{{ .Values.domain.zone }}
+          - --footer=-
+          {{ if eq .Values.proxy.provider "oidc" -}}
+          - --oidc-issuer-url={{ .Values.proxy.oidc_issuer_url }}
+          {{ end -}}
+          {{ if eq .Values.proxy.provider "github" -}}
+          - --github-org={{ .Values.proxy.github_org }}
+          {{ end -}}
+          env:
+          - name: OAUTH2_PROXY_CLIENT_ID
+            value: {{ .Values.proxy.client.id }}
+          - name: OAUTH2_PROXY_CLIENT_SECRET
+            value: {{ .Values.proxy.client.secret }}
+          - name: OAUTH2_PROXY_COOKIE_SECRET
+            value: {{ .Values.proxy.cookie.secret }}
+          ports:
+          - containerPort: 4180
+            protocol: TCP
+            name: http
+

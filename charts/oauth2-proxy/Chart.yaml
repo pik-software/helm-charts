@@ -1,0 +1,10 @@
+apiVersion: v1
+appVersion: 4.0.0
+home: https://github.com/express42/helm-charts/
+maintainers:
+- email: nvelgin@express42.com
+  name: Nikita Velgin
+name: oauth2-proxy
+sources:
+- https://github.com/pusher/oauth2_proxy
+version: 0.0.3

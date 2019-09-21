@@ -1,0 +1,8 @@
+region: europe-north1
+zones: europe-north1-a, europe-north1-b, europe-north1-c
+
+regional_standard:
+  default: false
+
+regional_ssd:
+  default: false

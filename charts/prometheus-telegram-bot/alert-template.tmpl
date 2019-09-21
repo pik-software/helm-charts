@@ -1,0 +1,45 @@
+{{ $length := len .GroupLabels -}} {{ if ne $length 0 }}
+<b>Grouped for:</b>
+{{ range $key,$val := .GroupLabels -}}
+    {{ $key }} = <code>{{ $val }}</code>
+{{ end -}}
+{{ end -}}
+
+{{ if eq .Status "firing"}}
+Status: <b>{{ .Status | str_UpperCase }} 🔥</b>
+{{ end -}}
+
+{{ if eq .Status "resolved"}}
+Status: <b>{{ .Status | str_UpperCase }} ✅</b>
+{{ end }}
+
+<b>Active Alert List:</b>
+{{- range $val := .Alerts }}
+  
+  {{ if HasKey $val.Annotations "name" -}}
+  Alert: <a href="{{ $val.GeneratorURL }}">{{ index $val.Annotations "name" }}</a>
+  {{ end -}}
+  {{ if HasKey $val.Annotations "value" -}} 
+  <b>Current value:</b> {{ index $val.Annotations "value" | str_FormatFloat}}
+  {{ end -}}
+  {{ else -}}
+  {{ if HasKey $val.Annotations "measureUnit" -}}
+  <b>Current value:</b> {{ str_Format_MeasureUnit (index $val.Annotations "measureUnit") (index $val.Annotations "value")}}  
+  {{ end -}}
+
+  {{ $severity := index $val.Labels "severity" -}}
+  {{ if eq $severity "Warning" -}}
+  <b>Severity:</b> Warning ⚠️
+  {{ else if eq $severity "Critical" -}}
+  <b>Severity:</b> Critical 🚨
+  {{ else -}}
+  <b>Severity:</b> {{ $severity }}
+  {{ end -}}
+  
+  <b>Active from:</b> {{ $val.StartsAt | str_FormatDate }}
+  {{ range $key, $value := $val.Annotations -}}
+  {{ if and (and (ne $key "name") (ne $key "value")) (ne $key "measureUnit") }}
+  <b>{{ $key }}:</b> {{ $value }}
+  {{- end -}}
+{{- end -}}
+{{- end -}}

@@ -1,0 +1,14 @@
+labels:
+  app: prometheus-telegram-bot
+
+telegram_token: ""
+template_path: "/template.tmpl"
+time_zone: "Europe/Moscow"
+split_token: "|"    
+time_outdata: "02/01/2006 15:04:05" 
+split_msg_byte: 4000
+
+image:
+  repository: avtandilko/prometheus-telegram-bot
+  tag: latest
+

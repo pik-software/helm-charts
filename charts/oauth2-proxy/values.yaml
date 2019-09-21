@@ -1,0 +1,56 @@
+labels:
+  app: oauth2-proxy
+
+proxy:
+  image:
+    repository: quay.io/pusher/oauth2_proxy
+    tag: v4.0.0
+  replicas: 1
+  client:
+    id: id
+    secret: secret
+  cookie:
+    secret: secret
+  provider: oidc
+  oidc_issuer_url: https://oauth2.example.com
+  github_org: ""
+
+ingress:
+  annotations: {}
+    # kubernetes.io/ingress.class: "nginx"
+    # certmanager.k8s.io/cluster-issuer: "letsencrypt-production"
+    # certmanager.k8s.io/acme-challenge-type: http01
+  hosts:
+    - oauth2.example.com
+  tls:
+    - secretName: oauth2-tls
+      hosts: 
+        - oauth2.example.com
+
+domain:
+  zone: example.com
+
+nginx:
+  image:
+    repository: nginx
+    tag: 1.15.9-alpine
+  config: |-
+    worker_processes 5;
+
+    events {
+    }
+
+    http {
+      server {
+        listen 80 default_server;
+
+        location = /healthcheck {
+          add_header Content-Type text/plain;
+          return 200 'ok';
+        }
+
+        location ~ /redirect/(.*) {
+          return 307 https://$1?$args;
+        }
+      }
+    }

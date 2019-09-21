@@ -1,0 +1,15 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: {{ .Release.Name }}-standard
+  annotations:
+    {{- if .Values.regional_standard.default }}
+    storageclass.kubernetes.io/is-default-class: "true"
+    {{- end }}
+  labels:
+    region: {{ .Values.region }}
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+  replication-type: regional-pd
+  zones: {{ .Values.zones }}

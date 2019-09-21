@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fullname" $ }}-template
+  labels:
+  {{- range $key, $value := .Values.labels }}
+    {{ $key }}: {{ $value }}
+  {{- end }}
+data:
+  template.tmpl: |-
+{{ .Files.Get "alert-template.tmpl" | indent 4 }}
+
+
+
