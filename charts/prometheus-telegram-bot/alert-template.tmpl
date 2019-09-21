@@ -13,6 +13,8 @@ Status: <b>{{ .Status | str_UpperCase }} 🔥</b>
 Status: <b>{{ .Status | str_UpperCase }} ✅</b>
 {{ end }}
 
+<b>------------------<b>
+
 <b>Active Alert List:</b>
 {{- range $val := .Alerts }}
   {{ $severity := index $val.Labels "severity" -}}
@@ -29,6 +31,4 @@ Status: <b>{{ .Status | str_UpperCase }} ✅</b>
   {{ end -}}
   <b>Active from:</b> {{ $val.StartsAt | str_FormatDate }}
 
-  <b>----------------------<b>
-{{- end -}}
 {{- end -}}
