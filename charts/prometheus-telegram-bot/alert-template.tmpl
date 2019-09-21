@@ -11,12 +11,11 @@ Status: <b>{{ .Status | str_UpperCase }} 🔥</b>
 
 {{ if eq .Status "resolved"}}
 Status: <b>{{ .Status | str_UpperCase }} ✅</b>
-{{ end }}
-
-<b>------------------</b>
+{{ end -}}
 
 <b>Active Alert List:</b>
 {{- range $val := .Alerts }}
+<b>---</b>
   {{ $severity := index $val.Labels "severity" -}}
   {{ if eq $severity "warning" -}}
   <b>Severity:</b> Warning ⚠️
@@ -30,5 +29,4 @@ Status: <b>{{ .Status | str_UpperCase }} ✅</b>
   <b>{{ $key }}:</b> {{ $value }}
   {{ end -}}
   <b>Active from:</b> {{ $val.StartsAt | str_FormatDate }}
-
 {{- end -}}
