@@ -8,7 +8,7 @@ metadata:
   {{- end }}
 data:
   template.tmpl: |-
-{{ .Files.Get "alert-template.tmpl" | indent 4 }}
+{{ .Files.Get "alert-templates/default.tmpl" | indent 4 }}
 
 
 

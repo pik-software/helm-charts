@@ -1,0 +1,12 @@
+groups:
+- name: group_name
+  rules:
+  - alert: alert_name
+    expr: expr
+    for: time
+    labels:
+      severity: severity
+    annotations:
+      summary: "Summary"
+
+     

@@ -1,0 +1,17 @@
+{{- $files := .Files.Glob "rules/*.yaml" }}
+{{- if $files }}
+apiVersion: v1
+kind: List
+items:
+{{- range $path, $fileContents := $files }}
+{{- $prometheusRuleName := regexReplaceAll "(^.*/)(.*)\\.yaml$" $path "${2}" }}
+  - apiVersion: monitoring.coreos.com/v1
+    kind: PrometheusRule
+    metadata:
+      name: prometheus-{{ $prometheusRuleName | trunc 63 | trimSuffix "-" }}
+      labels:
+        app: prometheus
+    spec:
+      {{- $.Files.Get $path | nindent 6}}
+{{- end }}
+{{- end }}

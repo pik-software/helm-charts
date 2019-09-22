@@ -2,7 +2,7 @@ prometheus-telegram-bot
 =======================
 
 
-Current chart version is `0.0.2`
+Current chart version is `0.1.0`
 
 Source code can be found [here](https://github.com/express42/helm-charts/)
 

@@ -4,7 +4,5 @@ home: https://github.com/express42/helm-charts/
 maintainers:
 - email: nvelgin@express42.com
   name: Nikita Velgin
-name: prometheus-telegram-bot
-sources:
-- https://github.com/inCaller/prometheus_bot
-version: 0.1.0
+name: prometheus-load-rules
+version: 0.0.1
