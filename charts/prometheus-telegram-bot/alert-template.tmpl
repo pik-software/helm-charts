@@ -1,7 +1,7 @@
 {{ $length := len .GroupLabels -}} {{ if ne $length 0 }}
 <b>Grouped for:</b>
 {{ range $key,$val := .GroupLabels -}}
-    {{ $key }} = <code>{{ $val }}</code>
+    <b>{{ $key }}</b> = <code>{{ $val }}</code>
 {{ end -}}
 {{ end -}}
 
@@ -20,7 +20,7 @@ Status: <b>{{ .Status | str_UpperCase }} ✅</b>
   {{ if eq $severity "warning" -}}
   <b>Severity:</b> Warning ⚠️
   {{ else if eq $severity "critical" -}}
-  <b>Severity:</b> Critical 🚨
+  <b>Severity:</b> <code>CRITICAL</code> 🚨
   {{ else -}}
   <b>Severity:</b> {{ $severity }}
   {{ end -}}
