@@ -1,6 +1,6 @@
 {{ $length := len .GroupLabels -}} {{ if ne $length 0 }}
-<b>Grouped for:</b>
-{{ range $key,$val := .GroupLabels -}}
+<b>Grouped by:</b>
+{{ range $key, $val := .GroupLabels -}}
     <b>{{ $key }}</b> = <code>{{ $val }}</code>
 {{ end -}}
 {{ end -}}
