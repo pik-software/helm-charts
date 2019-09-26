@@ -1,16 +1,16 @@
 {{ $length := len .GroupLabels -}} {{ if ne $length 0 }}
 <b>Grouped by:</b>
 {{ range $key, $val := .GroupLabels -}}
-    <b>{{ $key }}</b> = <code>{{ $val }}</code>
+    <b>#{{ $key }}</b> = <code>{{ $val }}</code>
 {{ end -}}
 {{ end -}}
 
 {{ if eq .Status "firing"}}
-Status: <b>{{ .Status | str_UpperCase }} 🔥</b>
+Status: <b>#{{ .Status | str_UpperCase }} 🔥</b>
 {{ end -}}
 
 {{ if eq .Status "resolved"}}
-Status: <b>{{ .Status | str_UpperCase }} ✅</b>
+Status: <b>#{{ .Status | str_UpperCase }} ✅</b>
 {{ end -}}
 
 <b>Active Alerts List:</b>
