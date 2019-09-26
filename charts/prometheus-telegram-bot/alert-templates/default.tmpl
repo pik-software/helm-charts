@@ -1,7 +1,7 @@
 {{ $length := len .GroupLabels -}} {{ if ne $length 0 }}
 <b>Grouped by:</b>
 {{ range $key, $val := .GroupLabels -}}
-    <b>{{ $key }}</b> = <code>#{{ $val }}</code>
+    <b>{{ $key }}</b> = #{{ $val }}
 {{ end -}}
 {{ end -}}
 
@@ -18,11 +18,11 @@ Status: <b>#{{ .Status | str_UpperCase }} ✅</b>
 <b>---</b>
   {{ $severity := index $val.Labels "severity" -}}
   {{ if eq $severity "warning" -}}
-  <b>Severity:</b> Warning ⚠️
+  <b>Severity:</b> #Warning ⚠️
   {{ else if eq $severity "critical" -}}
-  <b>Severity:</b> <code>CRITICAL</code> 🚨
+  <b>Severity:</b> #CRITICAL 🚨
   {{ else -}}
-  <b>Severity:</b> {{ $severity }}
+  <b>Severity:</b> #{{ $severity }}
   {{ end -}}
 
   {{ range $key, $value := $val.Annotations -}}

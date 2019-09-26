@@ -7,4 +7,4 @@ maintainers:
 name: prometheus-telegram-bot
 sources:
 - https://github.com/inCaller/prometheus_bot
-version: 0.1.2
+version: 0.1.3
