@@ -1,0 +1,8 @@
+ingress:
+  annotations: {}
+  hosts:
+    - jaeger.example.com
+  tls:
+    - secretName: jaeger-tls
+      hosts:
+        - jaeger.example.com
