@@ -6,6 +6,8 @@ metadata:
   {{- range $key, $value := .Values.labels }}
     {{ $key }}: {{ $value }}
   {{- end }}
+  annotations:
+    checksum/config: {{ include (print $.Template.BasePath "/configmap-config.yaml") . | sha256sum }}
 spec:
   replicas: 1
   selector:
