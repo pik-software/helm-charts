@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   gcp-regional-sc:
   - apiVersion: v1
-    created: "2019-11-27T11:16:09.576172+03:00"
+    created: 2020-11-18T10:45:24.546287903+03:00
     digest: 80db0664a5e0f5cd9f1762586afc073ef4e6382af24ce09b66a887a3b7f7fb82
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -13,7 +13,7 @@ entries:
     - gcp-regional-sc-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v1
-    created: "2019-11-27T11:16:09.575397+03:00"
+    created: 2020-11-18T10:45:24.54606576+03:00
     digest: d26a4b7266a5f68a5f7b0bb45c0f2f670721306e0b7b675b28ace9db68740627
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -25,7 +25,7 @@ entries:
     version: 0.0.1
   grafana-load-dashboards:
   - apiVersion: v1
-    created: "2019-11-27T11:16:09.576564+03:00"
+    created: 2020-11-18T10:45:24.546523448+03:00
     digest: ed1cfb49ce62adef897970a8c7047d5ac2911589764c079ff5ac0f074494d1dd
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -38,7 +38,7 @@ entries:
   jaeger:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2019-11-27T11:16:09.576916+03:00"
+    created: 2020-11-18T10:45:24.546766407+03:00
     digest: e624275050a2744609c6312c1262cdce6434dc58b8eb8ae8d5d66a913bb7a71a
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -51,7 +51,7 @@ entries:
   oauth2-proxy:
   - apiVersion: v1
     appVersion: 4.0.0
-    created: "2019-11-27T11:16:09.578503+03:00"
+    created: 2020-11-18T10:45:24.547573463+03:00
     digest: 748f44ab4931c5c015e530e4153c89e184eeb2cdb00d1c3bf11738b78f5229be
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -65,7 +65,7 @@ entries:
     version: 0.0.3
   - apiVersion: v1
     appVersion: 4.0.0
-    created: "2019-11-27T11:16:09.577862+03:00"
+    created: 2020-11-18T10:45:24.547270716+03:00
     digest: da03dcebc6c0be5264fc801b459219ad3a9bc23914d802a07ecec2affd469375
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -79,7 +79,7 @@ entries:
     version: 0.0.2
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2019-11-27T11:16:09.577238+03:00"
+    created: 2020-11-18T10:45:24.546971296+03:00
     digest: ed2f60f125402933d6dd9d5f6908ed0b2eff7f5a26afb2f6b58ca65c80ea408a
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -92,7 +92,7 @@ entries:
   prometheus-load-rules:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2019-11-27T11:16:09.578776+03:00"
+    created: 2020-11-18T10:45:24.547766098+03:00
     digest: 535a979c24d68db3ea87d442137691ce13f862330011c6ed963321a83c76487b
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -105,7 +105,23 @@ entries:
   prometheus-telegram-bot:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2019-11-27T11:16:09.583501+03:00"
+    created: 2020-11-18T10:45:24.550437521+03:00
+    digest: 3d23b194c33fdcde6763026894ddc4bf22324c9591fa14af41d22adf0ed03c24
+    home: https://github.com/pik-software/helm-charts/
+    maintainers:
+    - email: nvelgin@express42.com
+      name: Nikita Velgin
+    - email: dibirovsm@pik.ru
+      name: Suleiman Dibirov
+    name: prometheus-telegram-bot
+    sources:
+    - https://github.com/inCaller/prometheus_bot
+    urls:
+    - prometheus-telegram-bot-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v1
+    appVersion: 0.0.1
+    created: 2020-11-18T10:45:24.549510292+03:00
     digest: dd088622d4ff6c8342fb253bad8dd7b6708bc9d0d431cc3225dfe15939851ef1
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -119,7 +135,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2019-11-27T11:16:09.583116+03:00"
+    created: 2020-11-18T10:45:24.54921573+03:00
     digest: 26676e6773af1d6924a90c8960b81f350575f87e082235ae8b90ccdcd83188f4
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -133,7 +149,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2019-11-27T11:16:09.582679+03:00"
+    created: 2020-11-18T10:45:24.54892538+03:00
     digest: 50749b091fb54917ca011a0646d07bff72a017e6a7f751e90bbc8ac5d6b57004
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -147,7 +163,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2019-11-27T11:16:09.581583+03:00"
+    created: 2020-11-18T10:45:24.548616029+03:00
     digest: 590a4ec70337cca07b244564f302f918d9065b1720cd72ab2bb800c3cd00b10f
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -161,7 +177,7 @@ entries:
     version: 0.1.0
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2019-11-27T11:16:09.580072+03:00"
+    created: 2020-11-18T10:45:24.548325068+03:00
     digest: 677ba6d0fcd52fd14600f71d82ba2cf7b1b0b233b2fa2a9b93b184436f762360
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -175,7 +191,7 @@ entries:
     version: 0.0.2
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2019-11-27T11:16:09.579498+03:00"
+    created: 2020-11-18T10:45:24.548041187+03:00
     digest: 5570dfbc87af2edc542774dff1b43bd2451c7344defbe46ae7d29686c1beda47
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -187,4 +203,4 @@ entries:
     urls:
     - prometheus-telegram-bot-0.0.1.tgz
     version: 0.0.1
-generated: "2019-11-27T11:16:09.574403+03:00"
+generated: 2020-11-18T10:45:24.545672897+03:00

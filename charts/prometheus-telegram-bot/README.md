@@ -21,3 +21,4 @@ Source code can be found [here](https://github.com/express42/helm-charts/)
 | template_path | string | `"/template.tmpl"` |  |
 | time_outdata | string | `"02/01/2006 15:04:05"` |  |
 | time_zone | string | `"Europe/Moscow"` |  |
+| send_only | bool | `false` |  |
