@@ -1,7 +1,5 @@
 #!/bin/bash
 
-helm lint charts/$1
-helm package charts/$1
-helm repo index .
-helm-docs charts/
-
+helm-2.13.0 lint charts/$1
+helm-2.13.0 package charts/$1
+helm-2.13.0 repo index .

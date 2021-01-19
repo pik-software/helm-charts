@@ -4,7 +4,9 @@ home: https://github.com/express42/helm-charts/
 maintainers:
 - email: nvelgin@express42.com
   name: Nikita Velgin
+- email: dibirovsm@pik.ru
+  name: Suleiman Dibirov
 name: oauth2-proxy
 sources:
 - https://github.com/pusher/oauth2_proxy
-version: 0.0.3
+version: 0.0.4
