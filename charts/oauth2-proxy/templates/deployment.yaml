@@ -52,6 +52,13 @@ spec:
           - --provider={{ .Values.proxy.provider}}
           - --email-domain=*
           - --http-address=0.0.0.0:4180
+          {{- range $key, $value := .Values.proxy.extraArgs }}
+          {{- if $value }}
+          - --{{ $key }}={{ $value }}
+          {{- else }}
+          - --{{ $key }}
+          {{- end }}
+          {{- end }}
           - --redirect-url=https://oauth2.{{ .Values.domain.zone }}/oauth2/callback
           - --upstream=http://localhost/redirect/
           - --cookie-domain=.{{ .Values.domain.zone }}

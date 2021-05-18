@@ -14,6 +14,7 @@ proxy:
   provider: oidc
   oidc_issuer_url: https://oauth2.example.com
   github_org: ""
+  extraArgs: {}
 
 ingress:
   annotations: {}
