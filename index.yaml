@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   gcp-regional-sc:
   - apiVersion: v1
-    created: 2021-01-19T10:49:36.53445584+03:00
+    created: "2021-05-18T17:18:12.4047275+05:00"
     digest: 80db0664a5e0f5cd9f1762586afc073ef4e6382af24ce09b66a887a3b7f7fb82
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -13,7 +13,7 @@ entries:
     - gcp-regional-sc-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v1
-    created: 2021-01-19T10:49:36.53422848+03:00
+    created: "2021-05-18T17:18:12.4045421+05:00"
     digest: d26a4b7266a5f68a5f7b0bb45c0f2f670721306e0b7b675b28ace9db68740627
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -25,7 +25,7 @@ entries:
     version: 0.0.1
   grafana-load-dashboards:
   - apiVersion: v1
-    created: 2021-01-19T10:49:36.534748002+03:00
+    created: "2021-05-18T17:18:12.4048597+05:00"
     digest: ed1cfb49ce62adef897970a8c7047d5ac2911589764c079ff5ac0f074494d1dd
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -38,7 +38,7 @@ entries:
   jaeger:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2021-01-19T10:49:36.535041751+03:00
+    created: "2021-05-18T17:18:12.4050264+05:00"
     digest: e624275050a2744609c6312c1262cdce6434dc58b8eb8ae8d5d66a913bb7a71a
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -51,7 +51,23 @@ entries:
   oauth2-proxy:
   - apiVersion: v1
     appVersion: 4.0.0
-    created: 2021-01-19T10:49:36.536166987+03:00
+    created: "2021-05-18T17:18:12.4062963+05:00"
+    digest: 27ec101fb29ca0a3018d803b40d8df311766e5f2398bfc19153548bf0ff38c54
+    home: https://github.com/express42/helm-charts/
+    maintainers:
+    - email: nvelgin@express42.com
+      name: Nikita Velgin
+    - email: dibirovsm@pik.ru
+      name: Suleiman Dibirov
+    name: oauth2-proxy
+    sources:
+    - https://github.com/pusher/oauth2_proxy
+    urls:
+    - oauth2-proxy-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v1
+    appVersion: 4.0.0
+    created: "2021-05-18T17:18:12.4060085+05:00"
     digest: 17daa73b70663fd25479440d0c26d69a82225bfccfad02cf7a26b5f2d7b782e7
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -67,7 +83,7 @@ entries:
     version: 0.0.4
   - apiVersion: v1
     appVersion: 4.0.0
-    created: 2021-01-19T10:49:36.535848622+03:00
+    created: "2021-05-18T17:18:12.4057387+05:00"
     digest: 748f44ab4931c5c015e530e4153c89e184eeb2cdb00d1c3bf11738b78f5229be
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -81,7 +97,7 @@ entries:
     version: 0.0.3
   - apiVersion: v1
     appVersion: 4.0.0
-    created: 2021-01-19T10:49:36.53554817+03:00
+    created: "2021-05-18T17:18:12.4054528+05:00"
     digest: da03dcebc6c0be5264fc801b459219ad3a9bc23914d802a07ecec2affd469375
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -95,7 +111,7 @@ entries:
     version: 0.0.2
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2021-01-19T10:49:36.535253527+03:00
+    created: "2021-05-18T17:18:12.405165+05:00"
     digest: ed2f60f125402933d6dd9d5f6908ed0b2eff7f5a26afb2f6b58ca65c80ea408a
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -108,7 +124,7 @@ entries:
   prometheus-load-rules:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2021-01-19T10:49:36.536367202+03:00
+    created: "2021-05-18T17:18:12.4063995+05:00"
     digest: 535a979c24d68db3ea87d442137691ce13f862330011c6ed963321a83c76487b
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -121,7 +137,7 @@ entries:
   prometheus-telegram-bot:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2021-01-19T10:49:36.539906076+03:00
+    created: "2021-05-18T17:18:12.408155+05:00"
     digest: 49beb5c3230240faa9a7d449e85803272a88ce9e38dc7e4eb26e561ec3807834
     home: https://github.com/pik-software/helm-charts/
     maintainers:
@@ -137,7 +153,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2021-01-19T10:49:36.539569043+03:00
+    created: "2021-05-18T17:18:12.407553+05:00"
     digest: dd088622d4ff6c8342fb253bad8dd7b6708bc9d0d431cc3225dfe15939851ef1
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -151,7 +167,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2021-01-19T10:49:36.538854286+03:00
+    created: "2021-05-18T17:18:12.4073713+05:00"
     digest: 26676e6773af1d6924a90c8960b81f350575f87e082235ae8b90ccdcd83188f4
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -165,7 +181,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2021-01-19T10:49:36.538111232+03:00
+    created: "2021-05-18T17:18:12.4071832+05:00"
     digest: 50749b091fb54917ca011a0646d07bff72a017e6a7f751e90bbc8ac5d6b57004
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -179,7 +195,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2021-01-19T10:49:36.537196814+03:00
+    created: "2021-05-18T17:18:12.4069875+05:00"
     digest: 590a4ec70337cca07b244564f302f918d9065b1720cd72ab2bb800c3cd00b10f
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -193,7 +209,7 @@ entries:
     version: 0.1.0
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2021-01-19T10:49:36.536908655+03:00
+    created: "2021-05-18T17:18:12.4067744+05:00"
     digest: 677ba6d0fcd52fd14600f71d82ba2cf7b1b0b233b2fa2a9b93b184436f762360
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -207,7 +223,7 @@ entries:
     version: 0.0.2
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2021-01-19T10:49:36.536631292+03:00
+    created: "2021-05-18T17:18:12.4065844+05:00"
     digest: 5570dfbc87af2edc542774dff1b43bd2451c7344defbe46ae7d29686c1beda47
     home: https://github.com/express42/helm-charts/
     maintainers:
@@ -219,4 +235,4 @@ entries:
     urls:
     - prometheus-telegram-bot-0.0.1.tgz
     version: 0.0.1
-generated: 2021-01-19T10:49:36.533849766+03:00
+generated: "2021-05-18T17:18:12.4042648+05:00"
