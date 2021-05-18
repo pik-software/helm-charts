@@ -9,4 +9,4 @@ maintainers:
 name: oauth2-proxy
 sources:
 - https://github.com/pusher/oauth2_proxy
-version: 0.0.4
+version: 0.0.5
